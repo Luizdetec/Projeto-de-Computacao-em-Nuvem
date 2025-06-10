@@ -52,7 +52,7 @@ resource "aws_route_table_association" "a" {
 # Bloco 7: Cria um grupo de segurança (firewall) para a instância.
 resource "aws_security_group" "app_sg" {
   name        = "app-sg"
-  description = "Permite tráfego HTTP e SSH"
+  description = "Allow HTTP and SSH traffic"
   vpc_id      = aws_vpc.main.id
 
   ingress {
@@ -99,8 +99,7 @@ resource "aws_instance" "app_server" {
               [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
               nvm install --lts
 
-              # Clona seu repositório do GitHub (!! ATENÇÃO: MUDE A URL !!)
-              git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git /home/ubuntu/app
+              git clone https://github.com/Luizdetec/Projeto-de-Computacao-em-Nuvem.git /home/ubuntu/app
 
               # Entra na pasta da aplicação
               cd /home/ubuntu/app/app
