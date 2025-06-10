@@ -3,6 +3,23 @@ provider "aws" {
   region = var.aws_region
 }
 
+# Pesquisa pela AMI mais recente do Ubuntu 22.04 na região configurada
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # ID da Canonical, a empresa por trás do Ubuntu
+}
+
 # Bloco 2: Cria a nossa rede privada virtual (VPC). É o nosso espaço de rede isolado na nuvem.
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
@@ -80,7 +97,7 @@ resource "aws_security_group" "app_sg" {
 
 # Bloco 8: Cria a instância EC2
 resource "aws_instance" "app_server" {
-  ami           = "ami-0c55b159cbfafe1f0" # Imagem de Máquina: Ubuntu 22.04 LTS na região us-east-1
+  ami           = data.aws_ami.ubuntu.id # Imagem de Máquina: Ubuntu 22.04 LTS na região us-east-1
   instance_type = "t2.micro"             # Tipo de instância (incluído no nível gratuito da AWS)
 
   subnet_id              = aws_subnet.main.id
