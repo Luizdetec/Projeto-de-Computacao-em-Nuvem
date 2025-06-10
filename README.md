@@ -1,6 +1,6 @@
 # Projeto de Computação em Nuvem - Chat em Tempo Real
 
-[cite_start]Projeto prático da disciplina de **Programação Paralela e Distribuída** do curso de Ciência da Computação do CESUPA. [cite_start]O objetivo foi projetar, implementar e documentar uma solução de sistema distribuído utilizando conceitos de computação em nuvem, infraestrutura como código e comunicação entre processos.
+Projeto prático da disciplina de **Programação Paralela e Distribuída** do curso de Ciência da Computação do CESUPA. O objetivo foi projetar, implementar e documentar uma solução de sistema distribuído utilizando conceitos de computação em nuvem, infraestrutura como código e comunicação entre processos.
 
 ## Alunos
 
@@ -12,7 +12,7 @@
 
 Este projeto consiste em uma aplicação de chat em tempo real. A aplicação permite que múltiplos usuários se conectem a um servidor central e troquem mensagens que são retransmitidas a todos os participantes da sala instantaneamente.
 
-[cite_start]A infraestrutura é provisionada de forma automatizada na nuvem da AWS utilizando Terraform, e a comunicação entre cliente e servidor é feita via Sockets, com a biblioteca Socket.IO.
+A infraestrutura é provisionada de forma automatizada na nuvem da AWS utilizando Terraform, e a comunicação entre cliente e servidor é feita via Sockets, com a biblioteca Socket.IO.
 
 ## Arquitetura da Solução
 
@@ -28,15 +28,15 @@ A arquitetura de nuvem foi projetada para ser simples e funcional, contendo os s
 ## Tecnologias Utilizadas
 
 * **Provedor de Nuvem:** Amazon Web Services (AWS)
-* [cite_start]**Infraestrutura como Código (IaC):** Terraform 
+* **Infraestrutura como Código (IaC):** Terraform 
 * **Backend:** Node.js com Express.js
-* [cite_start]**Comunicação em Tempo Real:** Sockets via Socket.IO 
+* **Comunicação em Tempo Real:** Sockets via Socket.IO 
 * **Linguagem da Aplicação:** JavaScript (Node.js)
 * **Linguagem da Infraestrutura:** HCL (HashiCorp Configuration Language)
 
 ## Instruções de Execução
 
-[cite_start]Siga os passos abaixo para testar a aplicação localmente ou para provisionar a infraestrutura completa na AWS.
+Siga os passos abaixo para testar a aplicação localmente ou para provisionar a infraestrutura completa na AWS.
 
 ### Pré-requisitos
 
