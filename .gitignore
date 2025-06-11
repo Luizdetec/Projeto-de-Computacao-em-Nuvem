@@ -5,12 +5,10 @@ Thumbs.db
 .vscode/
 
 # Dependências e logs do Node.js
-# A pasta node_modules é recriada com o comando 'npm install'
 /app/node_modules
 /app/npm-debug.log
 
 # Arquivos de estado, cache e logs do Terraform
-# O arquivo .tfstate pode conter segredos e NUNCA deve ser enviado ao Git
 .terraform/
 *.tfstate
 *.tfstate.*
